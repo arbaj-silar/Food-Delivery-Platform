@@ -479,8 +479,8 @@ Install the following:
 ### 1. Clone the repository
 
 ``` bash
-git clone <YOUR_REPOSITORY_URL>
-cd <YOUR_PROJECT_DIRECTORY>
+git clone https://github.com/arbaj-silar/Food-Delivery-Platform
+cd "Food-Delivery-Platform"
 ```
 
 Replace the placeholders with your repository URL and local directory.
