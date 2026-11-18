@@ -1,0 +1,710 @@
+
+/* =========================================
+   RESTAURANT ANALYTICS - FOOD EXPRESS THEME
+   Warm Dark Brown + Orange + Gold
+========================================= */
+
+:root {
+    --analytics-bg: #211B18;
+    --analytics-surface: #30251F;
+    --analytics-surface-secondary: #3B2D25;
+    --analytics-surface-elevated: #45342A;
+
+    --analytics-orange: #FF6A13;
+    --analytics-orange-hover: #E95708;
+    --analytics-gold: #FFD166;
+
+    --analytics-text: #F5EDE6;
+    --analytics-muted: #B7A69A;
+
+    --analytics-border: rgba(255, 220, 190, 0.10);
+
+    --analytics-success: #63D6A0;
+    --analytics-danger: #FF8580;
+
+    --analytics-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+}
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.restaurant-analytics-page {
+    min-height: 100%;
+    padding: 28px 32px;
+    background: var(--analytics-bg);
+    color: var(--analytics-text);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.restaurant-analytics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.analytics-breadcrumb {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--analytics-muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.restaurant-analytics-header h1 {
+    margin: 0;
+    color: var(--analytics-text);
+    font-size: 27px;
+    font-weight: 750;
+    letter-spacing: -0.7px;
+}
+
+.restaurant-analytics-header p {
+    margin: 7px 0 0;
+    color: var(--analytics-muted);
+    font-size: 13px;
+}
+
+.restaurant-analytics-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.restaurant-analytics-controls select,
+.restaurant-analytics-controls button {
+    height: 42px;
+    padding: 0 14px;
+    border: 1px solid var(--analytics-border);
+    border-radius: 8px;
+    background: var(--analytics-surface-secondary);
+    color: var(--analytics-text);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.restaurant-analytics-controls select {
+    min-width: 180px;
+    outline: none;
+    cursor: pointer;
+}
+
+.restaurant-analytics-controls select option {
+    background: var(--analytics-surface);
+    color: var(--analytics-text);
+}
+
+.restaurant-analytics-controls button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.restaurant-analytics-controls button:hover {
+    border-color: var(--analytics-orange);
+    color: var(--analytics-orange);
+    background: var(--analytics-surface-elevated);
+}
+
+.restaurant-analytics-controls button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   PERIOD SELECTOR
+========================================= */
+
+.restaurant-analytics-period {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 17px 20px;
+    background: var(--analytics-surface);
+    border: 1px solid var(--analytics-border);
+    border-radius: 10px;
+    box-shadow: var(--analytics-shadow);
+}
+
+.restaurant-analytics-period > div:first-child {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.restaurant-analytics-period strong {
+    color: var(--analytics-text);
+    font-size: 14px;
+}
+
+.restaurant-analytics-period span {
+    color: var(--analytics-muted);
+    font-size: 11px;
+}
+
+.analytics-date-filters {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px;
+    background: var(--analytics-surface-secondary);
+    border: 1px solid var(--analytics-border);
+    border-radius: 8px;
+}
+
+.analytics-date-filters button {
+    padding: 8px 13px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--analytics-muted);
+    font-size: 11px;
+    font-weight: 650;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.analytics-date-filters button:hover {
+    color: var(--analytics-orange);
+}
+
+.analytics-date-filters button.active {
+    background: var(--analytics-orange);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(255, 106, 19, 0.2);
+}
+
+/* =========================================
+   KPI CARDS
+========================================= */
+
+.restaurant-analytics-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.analytics-card {
+    position: relative;
+    min-height: 155px;
+    padding: 19px;
+    background: var(--analytics-surface);
+    border: 1px solid var(--analytics-border);
+    border-radius: 11px;
+    box-shadow: var(--analytics-shadow);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.analytics-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 106, 19, 0.25);
+}
+
+.analytics-card-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border-radius: 9px;
+}
+
+.analytics-card-icon.revenue {
+    color: var(--analytics-orange);
+    background: rgba(255, 106, 19, 0.14);
+}
+
+.analytics-card-icon.orders {
+    color: #B49AFF;
+    background: rgba(121, 91, 197, 0.17);
+}
+
+.analytics-card-icon.completed {
+    color: var(--analytics-success);
+    background: rgba(99, 214, 160, 0.13);
+}
+
+.analytics-card-icon.average {
+    color: #82B9FF;
+    background: rgba(67, 130, 202, 0.16);
+}
+
+.analytics-card > span {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--analytics-muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.analytics-card h2 {
+    margin: 0 0 7px;
+    color: var(--analytics-gold);
+    font-size: 24px;
+    font-weight: 750;
+    letter-spacing: -0.5px;
+}
+
+.analytics-card small {
+    color: var(--analytics-muted);
+    font-size: 10px;
+}
+
+/* =========================================
+   MAIN ANALYTICS GRID
+========================================= */
+
+.analytics-main-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.7fr) minmax(300px, 1fr);
+    gap: 18px;
+    margin-bottom: 19px;
+}
+
+.analytics-panel {
+    padding: 22px;
+    background: var(--analytics-surface);
+    border: 1px solid var(--analytics-border);
+    border-radius: 11px;
+    box-shadow: var(--analytics-shadow);
+}
+
+.analytics-panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.analytics-panel-header h2 {
+    margin: 0;
+    color: var(--analytics-text);
+    font-size: 15px;
+    font-weight: 750;
+}
+
+.analytics-panel-header p {
+    margin: 6px 0 0;
+    color: var(--analytics-muted);
+    font-size: 11px;
+}
+
+.analytics-panel-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    background: rgba(255, 106, 19, 0.14);
+    color: var(--analytics-orange);
+}
+
+/* =========================================
+   REVENUE CHART
+========================================= */
+
+.analytics-chart {
+    height: 245px;
+    display: flex;
+    gap: 12px;
+    padding-top: 5px;
+}
+
+.analytics-chart-y {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 25px;
+    color: var(--analytics-muted);
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.analytics-chart-bars {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 5px;
+    border-bottom: 1px solid var(--analytics-border);
+    background-image: linear-gradient(
+        to bottom,
+        transparent calc(50% - 1px),
+        rgba(255, 220, 190, 0.07) calc(50% - 1px),
+        rgba(255, 220, 190, 0.07) 50%,
+        transparent 50%
+    );
+}
+
+.analytics-chart-column {
+    flex: 1;
+    min-width: 0;
+    max-width: 42px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
+.analytics-bar-area {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.analytics-bar {
+    width: 65%;
+    min-height: 0;
+    border-radius: 5px 5px 0 0;
+    background: linear-gradient(
+        180deg,
+        #FFAD70 0%,
+        #FF6A13 100%
+    );
+    box-shadow: 0 0 12px rgba(255, 106, 19, 0.12);
+    transition: height 0.4s ease;
+}
+
+.analytics-chart-column > span {
+    color: var(--analytics-muted);
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+/* =========================================
+   STATUS BREAKDOWN
+========================================= */
+
+.analytics-status-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 3px;
+}
+
+.analytics-status-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 9px;
+}
+
+.analytics-status-label > span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--analytics-muted);
+    font-size: 11px;
+}
+
+.analytics-status-label i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.analytics-status-label strong {
+    color: var(--analytics-text);
+    font-size: 11px;
+}
+
+.analytics-status-track {
+    width: 100%;
+    height: 6px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--analytics-surface-elevated);
+}
+
+.analytics-status-track > div {
+    height: 100%;
+    border-radius: inherit;
+    transition: width 0.4s ease;
+}
+
+/* =========================================
+   OPERATIONAL CARDS
+========================================= */
+
+.analytics-operational-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 19px;
+}
+
+.analytics-operational-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    min-height: 85px;
+    padding: 17px;
+    background: var(--analytics-surface);
+    border: 1px solid var(--analytics-border);
+    border-radius: 10px;
+    color: var(--analytics-orange);
+    box-shadow: var(--analytics-shadow);
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.analytics-operational-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 106, 19, 0.25);
+}
+
+.analytics-operational-card > div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.analytics-operational-card span {
+    color: var(--analytics-muted);
+    font-size: 11px;
+}
+
+.analytics-operational-card strong {
+    color: var(--analytics-gold);
+    font-size: 20px;
+}
+
+/* =========================================
+   RECENT ORDERS
+========================================= */
+
+.analytics-recent-panel {
+    padding-bottom: 8px;
+}
+
+.analytics-recent-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.analytics-recent-table {
+    width: 100%;
+    min-width: 650px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.analytics-recent-table th {
+    padding: 13px 12px;
+    background: var(--analytics-surface-secondary);
+    color: var(--analytics-muted);
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.analytics-recent-table td {
+    padding: 15px 12px;
+    border-top: 1px solid var(--analytics-border);
+    color: var(--analytics-muted);
+    font-size: 11px;
+}
+
+.analytics-recent-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.analytics-recent-table tbody tr:hover {
+    background: rgba(255, 106, 19, 0.05);
+}
+
+.analytics-recent-table td:first-child {
+    color: var(--analytics-orange);
+    font-weight: 750;
+}
+
+.analytics-recent-status {
+    font-weight: 700;
+}
+
+/* =========================================
+   EMPTY AND LOADING STATES
+========================================= */
+
+.analytics-chart-empty {
+    min-height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--analytics-muted);
+    font-size: 12px;
+}
+
+.restaurant-analytics-loading,
+.restaurant-analytics-empty {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    color: var(--analytics-muted);
+    text-align: center;
+}
+
+.restaurant-analytics-loading p,
+.restaurant-analytics-empty p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.restaurant-analytics-empty h2 {
+    margin: 0;
+    color: var(--analytics-text);
+    font-size: 18px;
+}
+
+.restaurant-analytics-empty svg {
+    color: var(--analytics-orange);
+}
+
+.restaurant-analytics-error {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 18px;
+    padding: 13px 16px;
+    border: 1px solid rgba(255, 133, 128, 0.25);
+    border-radius: 8px;
+    background: rgba(255, 133, 128, 0.10);
+    color: var(--analytics-danger);
+    font-size: 12px;
+}
+
+.analytics-spin {
+    animation: analytics-rotate 1s linear infinite;
+}
+
+@keyframes analytics-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.restaurant-analytics-page button:focus-visible,
+.restaurant-analytics-page select:focus-visible {
+    outline: 2px solid var(--analytics-orange);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   TABLE SCROLLBAR
+========================================= */
+
+.analytics-recent-table-wrapper::-webkit-scrollbar {
+    height: 6px;
+}
+
+.analytics-recent-table-wrapper::-webkit-scrollbar-track {
+    background: var(--analytics-surface-secondary);
+}
+
+.analytics-recent-table-wrapper::-webkit-scrollbar-thumb {
+    background: var(--analytics-surface-elevated);
+    border-radius: 10px;
+}
+
+.analytics-recent-table-wrapper::-webkit-scrollbar-thumb:hover {
+    background: var(--analytics-orange);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1150px) {
+    .restaurant-analytics-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .analytics-main-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .restaurant-analytics-page {
+        padding: 22px 17px;
+    }
+
+    .restaurant-analytics-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .restaurant-analytics-controls {
+        width: 100%;
+    }
+
+    .restaurant-analytics-controls select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .restaurant-analytics-period {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .analytics-operational-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 520px) {
+    .restaurant-analytics-page {
+        padding: 17px 12px;
+    }
+
+    .restaurant-analytics-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .analytics-date-filters {
+        width: 100%;
+    }
+
+    .analytics-date-filters button {
+        flex: 1;
+        padding: 8px 6px;
+    }
+
+    .analytics-panel {
+        padding: 16px;
+    }
+
+    .analytics-chart {
+        gap: 6px;
+    }
+
+    .analytics-chart-column > span {
+        font-size: 8px;
+    }
+}

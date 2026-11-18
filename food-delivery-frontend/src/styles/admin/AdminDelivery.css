@@ -1,0 +1,587 @@
+
+/* =========================================
+   FOODEXPRESS ADMIN DELIVERY MANAGEMENT
+   WARM NIGHT BITES THEME
+========================================= */
+
+:root {
+    --admin-bg: #211B18;
+    --admin-surface: #30251F;
+    --admin-surface-secondary: #3B2D25;
+    --admin-surface-elevated: #45342A;
+
+    --admin-primary: #FF6A13;
+    --admin-primary-hover: #E95708;
+    --admin-gold: #FFD166;
+
+    --admin-text: #F5EDE6;
+    --admin-muted: #B7A69A;
+
+    --admin-border: rgba(255, 220, 190, 0.10);
+
+    --admin-success: #63D6A0;
+    --admin-danger: #FF8580;
+
+    --admin-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.16);
+
+    --admin-shadow-hover:
+        0 18px 42px rgba(0, 0, 0, 0.27);
+}
+
+/* =========================================
+   MAIN DELIVERY PAGE
+========================================= */
+
+.admin-delivery-page {
+    width: 100%;
+    min-width: 0;
+    color: var(--admin-text);
+}
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.admin-delivery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 26px;
+}
+
+.admin-delivery-header h1 {
+    margin: 0 0 7px;
+    font-size: 27px;
+    font-weight: 750;
+    color: var(--admin-text);
+}
+
+.admin-delivery-header p,
+.admin-delivery-section-header p {
+    margin: 0;
+    color: var(--admin-muted);
+    font-size: 13px;
+}
+
+.admin-delivery-refresh {
+    border: none;
+    border-radius: 9px;
+    padding: 11px 17px;
+
+    background: linear-gradient(
+        135deg,
+        var(--admin-primary),
+        var(--admin-primary-hover)
+    );
+
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.admin-delivery-refresh:hover {
+    background: var(--admin-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(255, 106, 19, 0.22);
+}
+
+.admin-delivery-refresh:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* =========================================
+   ALERTS
+========================================= */
+
+.admin-delivery-alert {
+    padding: 13px 16px;
+    border-radius: 9px;
+    margin-bottom: 18px;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.admin-delivery-alert.error {
+    background: rgba(255, 133, 128, 0.12);
+    color: var(--admin-danger);
+    border: 1px solid rgba(255, 133, 128, 0.3);
+}
+
+.admin-delivery-alert.success {
+    background: rgba(99, 214, 160, 0.12);
+    color: var(--admin-success);
+    border: 1px solid rgba(99, 214, 160, 0.3);
+}
+
+/* =========================================
+   DELIVERY STATISTICS
+========================================= */
+
+.admin-delivery-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 17px;
+    margin-bottom: 28px;
+}
+
+.admin-delivery-stat-card {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: 13px;
+
+    padding: 21px;
+
+    box-shadow: var(--admin-shadow);
+    min-width: 0;
+
+    transition: transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.admin-delivery-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--admin-shadow-hover);
+}
+
+.admin-delivery-stat-card span {
+    display: block;
+    color: var(--admin-muted);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.admin-delivery-stat-card strong {
+    display: block;
+    color: var(--admin-gold);
+
+    font-size: 29px;
+    font-weight: 750;
+    line-height: 1.2;
+
+    margin-bottom: 8px;
+}
+
+.admin-delivery-stat-card small {
+    color: var(--admin-muted);
+    font-size: 11px;
+}
+
+/* =========================================
+   DELIVERY MANAGEMENT SECTIONS
+========================================= */
+
+.admin-delivery-section {
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: 13px;
+
+    padding: 22px;
+    margin-bottom: 23px;
+
+    box-shadow: var(--admin-shadow);
+    min-width: 0;
+}
+
+.admin-delivery-section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.admin-delivery-section-header h2 {
+    color: var(--admin-text);
+    font-size: 17px;
+    font-weight: 750;
+    margin: 0 0 6px;
+}
+
+.admin-delivery-count {
+    background: rgba(255, 209, 102, 0.12);
+    color: var(--admin-gold);
+
+    border: 1px solid rgba(255, 209, 102, 0.2);
+    border-radius: 20px;
+
+    padding: 7px 12px;
+
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* =========================================
+   DELIVERY TABLE
+========================================= */
+
+.admin-delivery-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+
+    border: 1px solid var(--admin-border);
+    border-radius: 9px;
+
+    background: var(--admin-surface);
+
+    -webkit-overflow-scrolling: touch;
+}
+
+.admin-delivery-table {
+    width: 100%;
+    min-width: 760px;
+
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-delivery-table th {
+    background: var(--admin-surface-secondary);
+    color: var(--admin-gold);
+
+    padding: 14px 13px;
+
+    font-size: 11px;
+    font-weight: 750;
+
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+.admin-delivery-table td {
+    padding: 14px 13px;
+
+    border-top: 1px solid var(--admin-border);
+
+    color: var(--admin-muted);
+    font-size: 12px;
+
+    vertical-align: middle;
+}
+
+.admin-delivery-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.admin-delivery-table tbody tr:hover {
+    background: rgba(255, 106, 19, 0.07);
+}
+
+.admin-delivery-table td strong {
+    color: var(--admin-text);
+    font-weight: 700;
+}
+
+.admin-delivery-address {
+    max-width: 220px;
+    white-space: normal;
+    line-height: 1.5;
+}
+
+/* =========================================
+   TABLE SELECT INPUTS
+========================================= */
+
+.admin-delivery-table select {
+    width: 155px;
+    max-width: 100%;
+
+    padding: 9px 10px;
+
+    border: 1px solid var(--admin-border);
+    border-radius: 7px;
+
+    background: var(--admin-surface-secondary);
+    color: var(--admin-text);
+
+    font-size: 11px;
+    outline: none;
+}
+
+.admin-delivery-table select:focus {
+    border-color: var(--admin-primary);
+    box-shadow: 0 0 0 3px rgba(255, 106, 19, 0.12);
+}
+
+.admin-delivery-table select option {
+    background: var(--admin-surface-secondary);
+    color: var(--admin-text);
+}
+
+/* =========================================
+   DELIVERY ACTION BUTTONS
+========================================= */
+
+.admin-delivery-assign-btn,
+.admin-delivery-activate-btn,
+.admin-delivery-deactivate-btn {
+    border: none;
+    border-radius: 7px;
+
+    padding: 9px 13px;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    cursor: pointer;
+    white-space: nowrap;
+
+    transition: all 0.2s ease;
+}
+
+.admin-delivery-assign-btn {
+    background: var(--admin-primary);
+    color: #fff;
+}
+
+.admin-delivery-assign-btn:hover {
+    background: var(--admin-primary-hover);
+    transform: translateY(-1px);
+}
+
+.admin-delivery-activate-btn {
+    background: rgba(99, 214, 160, 0.12);
+    color: var(--admin-success);
+    border: 1px solid rgba(99, 214, 160, 0.25);
+}
+
+.admin-delivery-activate-btn:hover {
+    background: rgba(99, 214, 160, 0.2);
+}
+
+.admin-delivery-deactivate-btn {
+    background: rgba(255, 133, 128, 0.12);
+    color: var(--admin-danger);
+    border: 1px solid rgba(255, 133, 128, 0.25);
+}
+
+.admin-delivery-deactivate-btn:hover {
+    background: rgba(255, 133, 128, 0.2);
+}
+
+.admin-delivery-assign-btn:disabled,
+.admin-delivery-activate-btn:disabled,
+.admin-delivery-deactivate-btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* =========================================
+   DELIVERY STATUS BADGES
+========================================= */
+
+.admin-delivery-status {
+    display: inline-block;
+
+    border-radius: 20px;
+    padding: 6px 10px;
+
+    font-size: 10px;
+    font-weight: 750;
+    white-space: nowrap;
+
+    background: var(--admin-surface-secondary);
+    color: var(--admin-muted);
+
+    border: 1px solid var(--admin-border);
+}
+
+.admin-delivery-status.active,
+.admin-delivery-status.available,
+.admin-delivery-status.delivered,
+.admin-delivery-status.completed {
+    background: rgba(99, 214, 160, 0.12);
+    color: var(--admin-success);
+    border-color: rgba(99, 214, 160, 0.24);
+}
+
+.admin-delivery-status.inactive,
+.admin-delivery-status.cancelled,
+.admin-delivery-status.failed {
+    background: rgba(255, 133, 128, 0.12);
+    color: var(--admin-danger);
+    border-color: rgba(255, 133, 128, 0.24);
+}
+
+.admin-delivery-status.on-delivery,
+.admin-delivery-status.picked-up,
+.admin-delivery-status.out-for-delivery {
+    background: rgba(255, 106, 19, 0.12);
+    color: #FF9A5C;
+    border-color: rgba(255, 106, 19, 0.24);
+}
+
+.admin-delivery-status.busy,
+.admin-delivery-status.pending,
+.admin-delivery-status.assigned {
+    background: rgba(255, 209, 102, 0.12);
+    color: var(--admin-gold);
+    border-color: rgba(255, 209, 102, 0.24);
+}
+
+/* =========================================
+   EMPTY AND LOADING STATES
+========================================= */
+
+.admin-delivery-empty {
+    padding: 35px 15px;
+    text-align: center;
+
+    background: var(--admin-surface-secondary);
+    border: 1px dashed var(--admin-border);
+    border-radius: 9px;
+
+    color: var(--admin-muted);
+    font-size: 13px;
+}
+
+.admin-delivery-loading {
+    padding: 60px 20px;
+    text-align: center;
+
+    color: var(--admin-muted);
+    font-size: 14px;
+}
+
+/* =========================================
+   DELIVERY PARTNER SEARCH
+========================================= */
+
+.admin-delivery-search {
+    width: 320px;
+    max-width: 100%;
+
+    padding: 12px 16px;
+
+    border: 1px solid var(--admin-border);
+    border-radius: 10px;
+
+    background: var(--admin-surface-secondary);
+    color: var(--admin-text);
+
+    font-size: 14px;
+    outline: none;
+
+    transition: all 0.25s ease;
+}
+
+.admin-delivery-search::placeholder {
+    color: var(--admin-muted);
+}
+
+.admin-delivery-search:focus {
+    border-color: var(--admin-primary);
+    box-shadow: 0 0 0 3px rgba(255, 106, 19, 0.12);
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1050px) {
+    .admin-delivery-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================
+   RESPONSIVE SEARCH
+========================================= */
+
+@media (max-width: 768px) {
+    .admin-delivery-search {
+        width: 100%;
+    }
+
+    .admin-delivery-section-header {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+    .admin-delivery-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-delivery-header h1 {
+        font-size: 22px;
+    }
+
+    .admin-delivery-refresh {
+        width: 100%;
+    }
+
+    .admin-delivery-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .admin-delivery-stat-card {
+        padding: 15px;
+    }
+
+    .admin-delivery-stat-card strong {
+        font-size: 24px;
+    }
+
+    .admin-delivery-stat-card span {
+        font-size: 11px;
+    }
+
+    .admin-delivery-section {
+        padding: 15px;
+        margin-bottom: 16px;
+    }
+
+    .admin-delivery-section-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .admin-delivery-section-header h2 {
+        font-size: 15px;
+    }
+
+    .admin-delivery-table {
+        min-width: 720px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE DEVICES
+========================================= */
+
+@media (max-width: 360px) {
+    .admin-delivery-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.admin-delivery-page button:focus-visible,
+.admin-delivery-page input:focus-visible,
+.admin-delivery-page select:focus-visible {
+    outline: 2px solid var(--admin-primary);
+    outline-offset: 3px;
+}

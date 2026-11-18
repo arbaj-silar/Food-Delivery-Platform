@@ -1,0 +1,644 @@
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap');
+
+/* =========================================
+   FOODEXPRESS NAVBAR THEME
+========================================= */
+
+:root {
+    --navbar-bg: #211B18;
+    --navbar-surface: #30251F;
+    --navbar-surface-secondary: #3B2D25;
+    --navbar-surface-elevated: #45342A;
+
+    --navbar-orange: #FF6A13;
+    --navbar-orange-hover: #E95708;
+    --navbar-gold: #FFD166;
+
+    --navbar-text: #F5EDE6;
+    --navbar-muted: #B7A69A;
+
+    --navbar-border: rgba(255, 220, 190, 0.10);
+
+    --navbar-success: #63D6A0;
+    --navbar-danger: #FF8580;
+}
+
+/* =========================================
+   MAIN NAVBAR
+========================================= */
+
+.customer-navbar {
+    min-height: 78px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    background: rgba(33, 27, 24, 0.97);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--navbar-border);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.18);
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* =========================================
+   BRAND
+========================================= */
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+
+    color: var(--navbar-orange);
+    font-family: 'Outfit', sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.7px;
+
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.3s ease;
+}
+
+.navbar-brand svg {
+    color: var(--navbar-orange);
+    filter: drop-shadow(0 3px 5px rgba(255, 106, 19, 0.22));
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    color: var(--navbar-gold);
+}
+
+.navbar-brand:hover svg {
+    transform: rotate(-12deg) scale(1.1);
+}
+
+/* =========================================
+   NAVIGATION LINKS
+========================================= */
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.navbar-links a {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 15px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    color: var(--navbar-muted);
+    text-decoration: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.25s ease;
+}
+
+.navbar-links a svg {
+    transition: transform 0.25s ease;
+}
+
+.navbar-links a:hover {
+    color: var(--navbar-orange);
+    background: rgba(255, 106, 19, 0.10);
+    border-color: rgba(255, 106, 19, 0.20);
+    transform: translateY(-2px);
+}
+
+.navbar-links a:hover svg {
+    transform: scale(1.12);
+}
+
+.navbar-links a.active {
+    color: var(--navbar-orange);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 106, 19, 0.16),
+        rgba(255, 209, 102, 0.07)
+    );
+    border-color: rgba(255, 106, 19, 0.24);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================================
+   USER SECTION
+========================================= */
+
+.navbar-user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.navbar-user-info {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 9px 13px;
+    border-radius: 12px;
+
+    background: var(--navbar-surface-secondary);
+    border: 1px solid var(--navbar-border);
+
+    color: var(--navbar-text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.navbar-user-info svg {
+    color: var(--navbar-gold);
+}
+
+/* =========================================
+   LOGOUT BUTTON
+========================================= */
+
+.navbar-logout {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 11px 16px;
+    border: 1px solid rgba(255, 133, 128, 0.25);
+    border-radius: 11px;
+
+    background: rgba(255, 133, 128, 0.09);
+    color: var(--navbar-danger);
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.navbar-logout:hover {
+    background: var(--navbar-danger);
+    color: #211B18;
+    border-color: transparent;
+    box-shadow: 0 6px 18px rgba(255, 133, 128, 0.16);
+    transform: translateY(-2px);
+}
+
+.navbar-logout:active {
+    transform: scale(0.96);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1050px) {
+    .customer-navbar {
+        padding: 14px 3%;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .navbar-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+    .customer-navbar {
+        padding: 13px 4%;
+        gap: 12px;
+    }
+
+    .navbar-brand {
+        font-size: 21px;
+    }
+
+    .navbar-user {
+        gap: 8px;
+    }
+
+    .navbar-user-info {
+        display: none;
+    }
+
+    .navbar-links {
+        gap: 5px;
+    }
+
+    .navbar-links a {
+        padding: 10px 11px;
+        font-size: 12px;
+        gap: 5px;
+    }
+
+    .navbar-links a svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .navbar-logout {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+}
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 380px) {
+    .navbar-brand {
+        font-size: 18px;
+    }
+
+    .navbar-links a {
+        padding: 8px;
+        font-size: 11px;
+    }
+
+    .navbar-logout span {
+        display: none;
+    }
+}
+
+/* =========================================
+   CIRCULAR PROFILE AVATAR
+========================================= */
+
+.navbar-user {
+    position: relative;
+    z-index: 1002;
+}
+
+.navbar-profile-trigger {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 5px 10px 5px 5px;
+
+    border: 1px solid var(--navbar-border);
+    border-radius: 30px;
+    background: var(--navbar-surface-secondary);
+    color: var(--navbar-text);
+
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.navbar-profile-trigger:hover,
+.navbar-profile-trigger.active {
+    background: var(--navbar-surface-elevated);
+    border-color: rgba(255, 106, 19, 0.35);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.18);
+}
+
+.navbar-avatar {
+    width: 43px;
+    height: 43px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF6A13, #E95708);
+    color: #ffffff;
+
+    font-family: 'Outfit', sans-serif;
+    font-size: 19px;
+    font-weight: 800;
+
+    box-shadow: 0 3px 9px rgba(255, 106, 19, 0.22);
+}
+
+.navbar-profile-trigger > svg {
+    color: var(--navbar-muted);
+    transition: transform 0.25s ease;
+}
+
+.navbar-profile-trigger.active > svg {
+    transform: rotate(180deg);
+}
+
+/* =========================================
+   DROPDOWN BACKDROP
+========================================= */
+
+.navbar-dropdown-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background: transparent;
+}
+
+/* =========================================
+   PROFILE DROPDOWN
+========================================= */
+
+.navbar-profile-dropdown {
+    position: absolute;
+    top: calc(100% + 14px);
+    right: 0;
+    z-index: 1003;
+
+    width: 310px;
+    padding: 19px;
+
+    background: var(--navbar-surface);
+    border: 1px solid var(--navbar-border);
+    border-radius: 17px;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+
+    animation: profileDropdownIn 0.2s ease;
+}
+
+@keyframes profileDropdownIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   PROFILE HEADER
+========================================= */
+
+.navbar-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding-bottom: 17px;
+    border-bottom: 1px solid var(--navbar-border);
+}
+
+.navbar-profile-large-avatar {
+    width: 53px;
+    height: 53px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FF6A13, #E95708);
+    color: #ffffff;
+
+    font-family: 'Outfit', sans-serif;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+.navbar-profile-header h3 {
+    margin: 0 0 5px;
+    color: var(--navbar-text);
+    font-family: 'Outfit', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.navbar-profile-header span {
+    color: var(--navbar-orange);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =========================================
+   ACCOUNT DETAILS
+========================================= */
+
+.navbar-profile-details {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    padding: 17px 0;
+}
+
+.navbar-profile-details > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    color: var(--navbar-muted);
+    font-size: 13px;
+    font-weight: 500;
+
+    overflow-wrap: anywhere;
+}
+
+.navbar-profile-details svg {
+    flex-shrink: 0;
+    color: var(--navbar-gold);
+}
+
+/* =========================================
+   PROFILE ACTIONS
+========================================= */
+
+.navbar-profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 13px;
+    border-top: 1px solid var(--navbar-border);
+}
+
+.navbar-profile-actions button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 11px 13px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+
+    background: transparent;
+    color: var(--navbar-text);
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: left;
+
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.navbar-profile-actions button:hover {
+    background: rgba(255, 106, 19, 0.12);
+    color: var(--navbar-orange);
+}
+
+.navbar-profile-actions .navbar-dropdown-logout {
+    background: rgba(255, 133, 128, 0.09);
+    border-color: rgba(255, 133, 128, 0.20);
+    color: var(--navbar-danger);
+}
+
+.navbar-profile-actions .navbar-dropdown-logout:hover {
+    background: var(--navbar-danger);
+    color: #211B18;
+}
+
+/* =========================================
+   PROFILE DROPDOWN RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+    .navbar-profile-dropdown {
+        width: min(310px, calc(100vw - 24px));
+        right: -5px;
+    }
+
+    .navbar-avatar {
+        width: 39px;
+        height: 39px;
+    }
+
+    .navbar-profile-trigger {
+        gap: 5px;
+        padding-right: 7px;
+    }
+}
+
+/* =========================================
+   ADMIN NAVIGATION BUTTONS
+========================================= */
+
+.admin-nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 12px 13px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+
+    background: transparent;
+    color: var(--navbar-muted);
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.admin-nav-link:hover {
+    color: var(--navbar-orange);
+    background: rgba(255, 106, 19, 0.10);
+    border-color: rgba(255, 106, 19, 0.20);
+    transform: translateY(-2px);
+}
+
+.admin-nav-link.active {
+    color: var(--navbar-orange);
+    background: linear-gradient(
+        135deg,
+        rgba(255, 106, 19, 0.16),
+        rgba(255, 209, 102, 0.07)
+    );
+    border-color: rgba(255, 106, 19, 0.24);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.admin-nav-link svg {
+    flex-shrink: 0;
+}
+
+.navbar-user-name {
+    color: var(--navbar-text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.navbar-profile-trigger {
+    padding: 3px;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+@media (max-width: 1050px) {
+    .navbar-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-nav-link {
+        padding: 9px;
+        font-size: 11px;
+        gap: 5px;
+    }
+
+    .admin-nav-link svg {
+        width: 15px;
+        height: 15px;
+    }
+
+    .navbar-user-name {
+        display: none;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.customer-navbar a:focus-visible,
+.customer-navbar button:focus-visible {
+    outline: 2px solid var(--navbar-gold);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .customer-navbar *,
+    .customer-navbar *::before,
+    .customer-navbar *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}

@@ -1,0 +1,681 @@
+
+/* =========================================
+   MY RESTAURANTS - FOOD EXPRESS THEME
+   Warm Dark Brown + Orange + Gold
+========================================= */
+
+:root {
+    --restaurant-bg: #211B18;
+    --restaurant-surface: #30251F;
+    --restaurant-surface-secondary: #3B2D25;
+    --restaurant-surface-elevated: #45342A;
+
+    --restaurant-orange: #FF6A13;
+    --restaurant-orange-hover: #E95708;
+    --restaurant-gold: #FFD166;
+
+    --restaurant-text: #F5EDE6;
+    --restaurant-muted: #B7A69A;
+
+    --restaurant-border: rgba(255, 220, 190, 0.10);
+
+    --restaurant-success: #63D6A0;
+    --restaurant-danger: #FF8580;
+
+    --restaurant-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+    --restaurant-shadow-hover: 0 18px 42px rgba(0, 0, 0, 0.27);
+}
+
+/* =========================================
+   MY RESTAURANTS PAGE
+========================================= */
+
+.my-restaurants-page {
+    width: 100%;
+    color: var(--restaurant-text);
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.my-restaurants-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 27px;
+}
+
+.restaurant-eyebrow {
+    display: block;
+    color: var(--restaurant-orange);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.my-restaurants-header h1 {
+    margin: 0;
+    color: var(--restaurant-text);
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.my-restaurants-header p {
+    margin: 7px 0 0;
+    color: var(--restaurant-muted);
+    font-size: 13px;
+}
+
+.my-restaurants-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.restaurant-add-btn,
+.restaurant-refresh-btn {
+    min-height: 41px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.restaurant-add-btn {
+    border: 1px solid var(--restaurant-orange);
+    background: var(--restaurant-orange);
+    color: #ffffff;
+}
+
+.restaurant-add-btn:hover {
+    background: var(--restaurant-orange-hover);
+    border-color: var(--restaurant-orange-hover);
+    transform: translateY(-1px);
+}
+
+.restaurant-add-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.restaurant-refresh-btn {
+    border: 1px solid var(--restaurant-border);
+    background: var(--restaurant-surface-secondary);
+    color: var(--restaurant-muted);
+}
+
+.restaurant-refresh-btn:hover {
+    border-color: var(--restaurant-orange);
+    color: var(--restaurant-orange);
+    background: var(--restaurant-surface-elevated);
+}
+
+.restaurant-refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   FEEDBACK
+========================================= */
+
+.restaurant-feedback {
+    padding: 13px 16px;
+    margin-bottom: 18px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.restaurant-feedback.error {
+    background: rgba(255, 133, 128, 0.10);
+    border: 1px solid rgba(255, 133, 128, 0.25);
+    color: var(--restaurant-danger);
+}
+
+.restaurant-feedback.success {
+    background: rgba(99, 214, 160, 0.10);
+    border: 1px solid rgba(99, 214, 160, 0.22);
+    color: var(--restaurant-success);
+}
+
+/* =========================================
+   SUMMARY CARD
+========================================= */
+
+.my-restaurants-summary {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    width: fit-content;
+    min-width: 260px;
+    padding: 18px 23px;
+    margin-bottom: 30px;
+    background: var(--restaurant-surface);
+    border: 1px solid var(--restaurant-border);
+    border-radius: 12px;
+    box-shadow: var(--restaurant-shadow);
+}
+
+.my-restaurants-summary-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 106, 19, 0.13);
+    color: var(--restaurant-orange);
+    border-radius: 11px;
+}
+
+.my-restaurants-summary span {
+    display: block;
+    color: var(--restaurant-muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.my-restaurants-summary strong {
+    display: block;
+    margin-top: 5px;
+    color: var(--restaurant-gold);
+    font-size: 23px;
+    font-weight: 800;
+}
+
+/* =========================================
+   RESTAURANT SECTION
+========================================= */
+
+.my-restaurants-section {
+    background: var(--restaurant-surface);
+    border: 1px solid var(--restaurant-border);
+    border-radius: 13px;
+    padding: 23px;
+    box-shadow: var(--restaurant-shadow);
+}
+
+.my-restaurants-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.my-restaurants-section-heading h2 {
+    margin: 0;
+    color: var(--restaurant-text);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.my-restaurants-section-heading p {
+    margin: 6px 0 0;
+    color: var(--restaurant-muted);
+    font-size: 11px;
+}
+
+/* =========================================
+   RESTAURANT GRID
+========================================= */
+
+.my-restaurants-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 19px;
+}
+
+.my-restaurant-card {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--restaurant-surface-secondary);
+    border: 1px solid var(--restaurant-border);
+    border-radius: 11px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.my-restaurant-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--restaurant-shadow-hover);
+    border-color: rgba(255, 106, 19, 0.25);
+}
+
+.my-restaurant-image {
+    height: 155px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: var(--restaurant-surface-elevated);
+    color: var(--restaurant-orange);
+}
+
+.my-restaurant-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.restaurant-status {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+
+.restaurant-status.approved {
+    background: rgba(99, 214, 160, 0.15);
+    color: var(--restaurant-success);
+    border: 1px solid rgba(99, 214, 160, 0.22);
+}
+
+.restaurant-status.pending {
+    background: rgba(255, 209, 102, 0.15);
+    color: var(--restaurant-gold);
+    border: 1px solid rgba(255, 209, 102, 0.22);
+}
+
+.restaurant-status.rejected {
+    background: rgba(255, 133, 128, 0.15);
+    color: var(--restaurant-danger);
+    border: 1px solid rgba(255, 133, 128, 0.22);
+}
+
+/* =========================================
+   RESTAURANT DETAILS
+========================================= */
+
+.my-restaurant-details {
+    padding: 17px;
+}
+
+.my-restaurant-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.my-restaurant-title h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 800;
+    color: var(--restaurant-text);
+}
+
+.my-restaurant-title > span {
+    flex-shrink: 0;
+    padding: 5px 8px;
+    background: var(--restaurant-surface-elevated);
+    color: var(--restaurant-gold);
+    border: 1px solid var(--restaurant-border);
+    border-radius: 5px;
+    font-size: 9px;
+    font-weight: 700;
+}
+
+.my-restaurant-description {
+    min-height: 34px;
+    margin: 11px 0 14px;
+    color: var(--restaurant-muted);
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.my-restaurant-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    margin-top: 10px;
+    color: var(--restaurant-muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.my-restaurant-info svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: var(--restaurant-orange);
+}
+
+.my-restaurant-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-top: 17px;
+    padding-top: 13px;
+    border-top: 1px solid var(--restaurant-border);
+    color: var(--restaurant-muted);
+    font-size: 10px;
+}
+
+.my-restaurant-footer strong {
+    color: var(--restaurant-text);
+}
+
+.restaurant-id {
+    color: var(--restaurant-gold);
+    font-weight: 700;
+}
+
+/* =========================================
+   EMPTY / LOADING STATE
+========================================= */
+
+.restaurant-empty-state {
+    min-height: 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 15px;
+    text-align: center;
+    color: var(--restaurant-muted);
+    font-size: 12px;
+}
+
+.restaurant-empty-icon {
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    background: rgba(255, 106, 19, 0.13);
+    color: var(--restaurant-orange);
+}
+
+.restaurant-empty-state h3 {
+    margin: 0;
+    color: var(--restaurant-text);
+    font-size: 15px;
+}
+
+.restaurant-empty-state p {
+    max-width: 350px;
+    margin: 9px 0 18px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   REGISTRATION MODAL
+========================================= */
+
+.restaurant-modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: rgba(15, 11, 9, 0.78);
+    backdrop-filter: blur(5px);
+}
+
+.restaurant-modal {
+    width: 100%;
+    max-width: 760px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 27px;
+    background: var(--restaurant-surface);
+    border: 1px solid var(--restaurant-border);
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.restaurant-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 23px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--restaurant-border);
+}
+
+.restaurant-modal-header h2 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 800;
+    color: var(--restaurant-text);
+}
+
+.restaurant-modal-header p {
+    margin: 7px 0 0;
+    color: var(--restaurant-muted);
+    font-size: 11px;
+}
+
+.restaurant-modal-close {
+    width: 35px;
+    height: 35px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--restaurant-border);
+    border-radius: 8px;
+    background: var(--restaurant-surface-secondary);
+    color: var(--restaurant-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.restaurant-modal-close:hover {
+    background: rgba(255, 106, 19, 0.14);
+    color: var(--restaurant-orange);
+    border-color: rgba(255, 106, 19, 0.3);
+}
+
+.restaurant-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.restaurant-form-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--restaurant-text);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.restaurant-form-grid input,
+.restaurant-form-grid textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 11px 12px;
+    border: 1px solid var(--restaurant-border);
+    border-radius: 7px;
+    outline: none;
+    background: var(--restaurant-surface-secondary);
+    color: var(--restaurant-text);
+    font-family: inherit;
+    font-size: 12px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.restaurant-form-grid input::placeholder,
+.restaurant-form-grid textarea::placeholder {
+    color: var(--restaurant-muted);
+    opacity: 0.7;
+}
+
+.restaurant-form-grid input:focus,
+.restaurant-form-grid textarea:focus {
+    border-color: var(--restaurant-orange);
+    box-shadow: 0 0 0 3px rgba(255, 106, 19, 0.12);
+}
+
+.restaurant-form-grid textarea {
+    resize: vertical;
+}
+
+.restaurant-form-grid .full-width {
+    grid-column: 1 / -1;
+}
+
+.restaurant-form-grid .restaurant-delivery-checkbox {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.restaurant-delivery-checkbox input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--restaurant-orange);
+}
+
+/* =========================================
+   MODAL ACTIONS
+========================================= */
+
+.restaurant-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 25px;
+    padding-top: 18px;
+    border-top: 1px solid var(--restaurant-border);
+}
+
+.restaurant-cancel-btn {
+    min-height: 41px;
+    padding: 0 17px;
+    border: 1px solid var(--restaurant-border);
+    border-radius: 8px;
+    background: var(--restaurant-surface-secondary);
+    color: var(--restaurant-muted);
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.restaurant-cancel-btn:hover {
+    background: var(--restaurant-surface-elevated);
+    color: var(--restaurant-text);
+}
+
+.restaurant-cancel-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.my-restaurants-page button:focus-visible,
+.restaurant-modal button:focus-visible,
+.restaurant-form-grid input:focus-visible,
+.restaurant-form-grid textarea:focus-visible {
+    outline: 2px solid var(--restaurant-orange);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   MODAL SCROLLBAR
+========================================= */
+
+.restaurant-modal::-webkit-scrollbar {
+    width: 6px;
+}
+
+.restaurant-modal::-webkit-scrollbar-track {
+    background: var(--restaurant-surface);
+}
+
+.restaurant-modal::-webkit-scrollbar-thumb {
+    background: var(--restaurant-surface-elevated);
+    border-radius: 10px;
+}
+
+.restaurant-modal::-webkit-scrollbar-thumb:hover {
+    background: var(--restaurant-orange);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+    .my-restaurants-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .my-restaurants-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .my-restaurants-header-actions {
+        width: 100%;
+    }
+
+    .my-restaurants-header-actions button {
+        flex: 1;
+    }
+
+    .my-restaurants-header h1 {
+        font-size: 23px;
+    }
+
+    .my-restaurants-section {
+        padding: 16px;
+    }
+
+    .restaurant-modal {
+        padding: 19px;
+    }
+
+    .restaurant-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .restaurant-form-grid .full-width {
+        grid-column: auto;
+    }
+
+    .my-restaurant-title {
+        flex-direction: column;
+    }
+
+    .my-restaurant-footer {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 380px) {
+    .my-restaurants-summary {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .restaurant-modal-overlay {
+        padding: 8px;
+    }
+}

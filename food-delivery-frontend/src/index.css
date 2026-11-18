@@ -1,0 +1,225 @@
+
+/* =========================================
+   FOODEXPRESS — GLOBAL THEME
+========================================= */
+
+:root {
+    --text: #B7A69A;
+    --text-h: #F5EDE6;
+
+    --bg: #211B18;
+    --surface: #30251F;
+    --surface-secondary: #3B2D25;
+    --surface-elevated: #45342A;
+
+    --border: rgba(255, 220, 190, 0.10);
+
+    --code-bg: #3B2D25;
+
+    --accent: #FF6A13;
+    --accent-hover: #E95708;
+    --accent-gold: #FFD166;
+
+    --accent-bg: rgba(255, 106, 19, 0.12);
+    --accent-border: rgba(255, 106, 19, 0.45);
+
+    --social-bg: rgba(59, 45, 37, 0.75);
+
+    --success: #63D6A0;
+    --danger: #FF8580;
+
+    --shadow:
+        rgba(0, 0, 0, 0.16) 0 12px 35px,
+        rgba(0, 0, 0, 0.10) 0 4px 12px;
+
+    --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+    --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+    --mono: ui-monospace, Consolas, monospace;
+
+    font: 18px/145% var(--sans);
+    letter-spacing: 0.18px;
+
+    color-scheme: dark;
+    color: var(--text);
+    background: var(--bg);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* =========================================
+   RESPONSIVE ROOT TYPOGRAPHY
+========================================= */
+
+@media (max-width: 1024px) {
+    :root {
+        font-size: 16px;
+    }
+}
+
+/* =========================================
+   GLOBAL BODY
+========================================= */
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+}
+
+/* =========================================
+   ROOT APPLICATION CONTAINER
+========================================= */
+
+#root {
+    width: 1126px;
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    border-inline: 1px solid var(--border);
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   GLOBAL HEADINGS
+========================================= */
+
+h1,
+h2 {
+    font-family: var(--heading);
+    font-weight: 500;
+    color: var(--text-h);
+}
+
+h1 {
+    font-size: 56px;
+    letter-spacing: -1.68px;
+    margin: 32px 0;
+}
+
+h2 {
+    font-size: 24px;
+    line-height: 118%;
+    letter-spacing: -0.24px;
+    margin: 0 0 8px;
+}
+
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 36px;
+        margin: 20px 0;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* =========================================
+   PARAGRAPHS
+========================================= */
+
+p {
+    margin: 0;
+}
+
+/* =========================================
+   CODE AND COUNTER ELEMENTS
+========================================= */
+
+code,
+.counter {
+    font-family: var(--mono);
+    display: inline-flex;
+    border-radius: 4px;
+    color: var(--text-h);
+}
+
+code {
+    font-size: 15px;
+    line-height: 135%;
+    padding: 4px 8px;
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+}
+
+/* =========================================
+   LINKS
+========================================= */
+
+a {
+    color: var(--accent);
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: var(--accent-gold);
+}
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection {
+    background: rgba(255, 106, 19, 0.30);
+    color: #ffffff;
+}
+
+/* =========================================
+   SCROLLBAR
+========================================= */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #604535 var(--bg);
+}
+
+*::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: #604535;
+    border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--accent);
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+:focus-visible {
+    outline: 2px solid var(--accent-gold);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

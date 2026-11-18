@@ -1,0 +1,428 @@
+
+/* ================================
+   FOODEXPRESS HOME PAGE
+================================ */
+
+:root {
+    --home-bg: #211B18;
+    --home-surface: #30251F;
+    --home-surface-secondary: #3B2D25;
+    --home-surface-elevated: #45342A;
+
+    --home-orange: #FF6A13;
+    --home-orange-hover: #E95708;
+    --home-gold: #FFD166;
+
+    --home-text: #F5EDE6;
+    --home-muted: #B7A69A;
+
+    --home-border: rgba(255, 220, 190, 0.10);
+    --home-success: #63D6A0;
+}
+
+/* ================================
+   HOME PAGE
+================================ */
+
+.home-page {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+    padding: 70px 9%;
+    box-sizing: border-box;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 85% 20%, rgba(255, 106, 19, 0.10), transparent 30%),
+        linear-gradient(120deg, var(--home-bg), #2B211C);
+}
+
+.home-content {
+    flex: 1;
+    max-width: 650px;
+}
+
+.home-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--home-orange);
+    font-size: 28px;
+    font-weight: 800;
+    margin-bottom: 55px;
+}
+
+.home-logo-icon {
+    font-size: 34px;
+}
+
+.home-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 17px;
+    border-radius: 30px;
+    background: rgba(255, 106, 19, 0.12);
+    border: 1px solid rgba(255, 106, 19, 0.18);
+    color: var(--home-gold);
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 25px;
+}
+
+.home-content h1 {
+    color: var(--home-text);
+    font-size: clamp(38px, 5vw, 64px);
+    line-height: 1.13;
+    font-weight: 800;
+    margin: 0 0 25px;
+}
+
+.home-content h1 span {
+    display: block;
+    color: var(--home-orange);
+}
+
+.home-description {
+    max-width: 560px;
+    color: var(--home-muted);
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 35px;
+}
+
+.home-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.home-actions a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 25px;
+    border-radius: 9px;
+    font-size: 15px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.25s ease;
+}
+
+.home-login-btn {
+    background: var(--home-orange);
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(255, 106, 19, 0.20);
+}
+
+.home-login-btn:hover {
+    background: var(--home-orange-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(255, 106, 19, 0.28);
+}
+
+.home-register-btn {
+    background: var(--home-surface-secondary);
+    color: var(--home-orange);
+    border: 1px solid rgba(255, 106, 19, 0.45);
+}
+
+.home-register-btn:hover {
+    background: rgba(255, 106, 19, 0.13);
+    border-color: var(--home-orange);
+    transform: translateY(-3px);
+}
+
+.home-features {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    margin-top: 65px;
+    flex-wrap: wrap;
+}
+
+.home-feature {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.home-feature span {
+    font-size: 23px;
+}
+
+.home-feature p {
+    color: var(--home-text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* ================================
+   HOME PAGE FOOD VISUAL
+================================ */
+
+.home-visual {
+    flex: 1;
+    min-height: 480px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.food-circle {
+    width: min(390px, 75vw);
+    height: min(390px, 75vw);
+    border-radius: 50%;
+    background: linear-gradient(
+        145deg,
+        #FFD166,
+        #FF6A13 65%,
+        #B94716
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow:
+        0 30px 70px rgba(255, 106, 19, 0.18),
+        0 0 0 18px rgba(255, 106, 19, 0.04);
+}
+
+.food-emoji {
+    font-size: clamp(130px, 18vw, 220px);
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.25));
+}
+
+.floating-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 20px;
+    background: var(--home-surface);
+    border: 1px solid var(--home-border);
+    border-radius: 14px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.30);
+}
+
+.floating-card > span {
+    font-size: 30px;
+}
+
+.floating-card div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.floating-card strong {
+    color: var(--home-text);
+    font-size: 14px;
+}
+
+.floating-card small {
+    color: var(--home-muted);
+    font-size: 12px;
+}
+
+.card-delivery {
+    top: 18%;
+    left: -5%;
+}
+
+.card-rating {
+    right: -3%;
+    bottom: 18%;
+}
+
+/* ================================
+   AUTHENTICATION LOADING
+================================ */
+
+.auth-loading {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    background: var(--home-bg);
+    color: var(--home-text);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.auth-spinner {
+    width: 42px;
+    height: 42px;
+    border: 4px solid var(--home-surface-elevated);
+    border-top-color: var(--home-orange);
+    border-radius: 50%;
+    animation: auth-spin 0.8s linear infinite;
+}
+
+@keyframes auth-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ================================
+   ACCESSIBILITY
+================================ */
+
+.home-page a:focus-visible {
+    outline: 2px solid var(--home-gold);
+    outline-offset: 4px;
+    border-radius: 9px;
+}
+
+/* ================================
+   RESPONSIVE DESIGN
+================================ */
+
+@media (max-width: 1000px) {
+
+    .home-page {
+        padding: 55px 6%;
+        gap: 25px;
+    }
+
+    .home-visual {
+        min-height: 380px;
+    }
+
+    .food-circle {
+        width: 300px;
+        height: 300px;
+    }
+
+    .food-emoji {
+        font-size: 160px;
+    }
+
+    .card-delivery {
+        left: -2%;
+    }
+
+    .card-rating {
+        right: -2%;
+    }
+}
+
+@media (max-width: 750px) {
+
+    .home-page {
+        flex-direction: column;
+        text-align: center;
+        padding: 45px 22px;
+    }
+
+    .home-content {
+        width: 100%;
+    }
+
+    .home-logo {
+        justify-content: center;
+        margin-bottom: 35px;
+    }
+
+    .home-content h1 {
+        font-size: 40px;
+    }
+
+    .home-description {
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 15px;
+    }
+
+    .home-actions {
+        justify-content: center;
+    }
+
+    .home-features {
+        justify-content: center;
+        gap: 18px;
+        margin-top: 40px;
+    }
+
+    .home-visual {
+        width: 100%;
+        min-height: 330px;
+    }
+
+    .food-circle {
+        width: 260px;
+        height: 260px;
+    }
+
+    .food-emoji {
+        font-size: 145px;
+    }
+
+    .card-delivery {
+        left: 0;
+        top: 8%;
+    }
+
+    .card-rating {
+        right: 0;
+        bottom: 8%;
+    }
+}
+
+@media (max-width: 450px) {
+
+    .home-content h1 {
+        font-size: 34px;
+    }
+
+    .home-actions {
+        flex-direction: column;
+    }
+
+    .home-actions a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .home-features {
+        gap: 12px;
+    }
+
+    .home-feature {
+        gap: 5px;
+    }
+
+    .home-feature p {
+        font-size: 11px;
+    }
+
+    .floating-card {
+        padding: 11px;
+    }
+
+    .floating-card > span {
+        font-size: 23px;
+    }
+}
+
+/* ================================
+   REDUCED MOTION
+================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .home-page *,
+    .home-page *::before,
+    .home-page *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .auth-spinner {
+        animation: none;
+    }
+}

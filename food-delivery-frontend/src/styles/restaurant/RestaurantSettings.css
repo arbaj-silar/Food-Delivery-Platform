@@ -1,0 +1,495 @@
+
+/* =========================================
+   RESTAURANT SETTINGS PAGE
+========================================= */
+
+:root {
+    --restaurant-bg: #211B18;
+    --restaurant-surface: #30251F;
+    --restaurant-surface-secondary: #3B2D25;
+    --restaurant-surface-elevated: #45342A;
+
+    --restaurant-orange: #FF6A13;
+    --restaurant-orange-hover: #E95708;
+    --restaurant-gold: #FFD166;
+
+    --restaurant-text: #F5EDE6;
+    --restaurant-muted: #B7A69A;
+
+    --restaurant-border: rgba(255, 220, 190, 0.10);
+
+    --restaurant-success: #63D6A0;
+    --restaurant-danger: #FF8580;
+
+    --restaurant-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+}
+
+/* =========================================
+   MAIN PAGE
+========================================= */
+
+.restaurant-settings-page {
+    padding: 30px;
+    color: var(--restaurant-text);
+    background: var(--restaurant-bg);
+    min-height: 100%;
+}
+
+/* =========================================
+   PAGE HEADER
+========================================= */
+
+.settings-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.restaurant-eyebrow {
+    display: inline-block;
+    color: var(--restaurant-orange);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+}
+
+.settings-page-header h1 {
+    margin: 0;
+    font-size: 27px;
+    font-weight: 750;
+    color: var(--restaurant-text);
+}
+
+.settings-page-header p {
+    color: var(--restaurant-muted);
+    font-size: 13px;
+    margin: 8px 0 0;
+}
+
+/* =========================================
+   REFRESH BUTTON
+========================================= */
+
+.settings-refresh-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 11px 16px;
+    background: var(--restaurant-surface-secondary);
+    color: var(--restaurant-text);
+    border: 1px solid var(--restaurant-border);
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.settings-refresh-btn:hover:not(:disabled) {
+    background: var(--restaurant-surface-elevated);
+    border-color: rgba(255, 106, 19, 0.35);
+    color: var(--restaurant-orange);
+}
+
+.settings-refresh-btn:focus-visible {
+    outline: 2px solid var(--restaurant-orange);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   FEEDBACK MESSAGES
+========================================= */
+
+.settings-feedback {
+    padding: 13px 16px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.settings-feedback.error {
+    background: rgba(255, 133, 128, 0.10);
+    color: var(--restaurant-danger);
+    border: 1px solid rgba(255, 133, 128, 0.25);
+}
+
+.settings-feedback.success {
+    background: rgba(99, 214, 160, 0.10);
+    color: var(--restaurant-success);
+    border: 1px solid rgba(99, 214, 160, 0.22);
+}
+
+/* =========================================
+   RESTAURANT SELECTOR
+========================================= */
+
+.settings-restaurant-selector {
+    background: var(--restaurant-surface);
+    border: 1px solid var(--restaurant-border);
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    box-shadow: var(--restaurant-shadow);
+}
+
+.settings-restaurant-selector > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--restaurant-text);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.settings-restaurant-selector > div svg {
+    color: var(--restaurant-orange);
+}
+
+.settings-restaurant-selector select {
+    min-width: 260px;
+    padding: 11px 13px;
+    border: 1px solid var(--restaurant-border);
+    border-radius: 7px;
+    background: var(--restaurant-surface-secondary);
+    color: var(--restaurant-text);
+    outline: none;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.settings-restaurant-selector select option {
+    background: var(--restaurant-surface);
+    color: var(--restaurant-text);
+}
+
+.settings-restaurant-selector select:focus {
+    border-color: var(--restaurant-orange);
+    box-shadow: 0 0 0 3px rgba(255, 106, 19, 0.12);
+}
+
+/* =========================================
+   SETTINGS FORM
+========================================= */
+
+.settings-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* =========================================
+   SETTINGS SECTION
+========================================= */
+
+.settings-section {
+    background: var(--restaurant-surface);
+    border: 1px solid var(--restaurant-border);
+    border-radius: 11px;
+    padding: 24px;
+    box-shadow: var(--restaurant-shadow);
+}
+
+.settings-section-heading {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding-bottom: 20px;
+    margin-bottom: 21px;
+    border-bottom: 1px solid var(--restaurant-border);
+}
+
+.settings-section-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 106, 19, 0.12);
+    color: var(--restaurant-orange);
+    border-radius: 9px;
+}
+
+.settings-section-heading h2 {
+    margin: 0;
+    color: var(--restaurant-text);
+    font-size: 16px;
+    font-weight: 750;
+}
+
+.settings-section-heading p {
+    margin: 5px 0 0;
+    color: var(--restaurant-muted);
+    font-size: 12px;
+}
+
+/* =========================================
+   SETTINGS FORM GRID
+========================================= */
+
+.settings-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.settings-form-grid label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--restaurant-muted);
+    font-size: 12px;
+    font-weight: 650;
+}
+
+/* INPUTS AND TEXTAREAS */
+
+.settings-form-grid input,
+.settings-form-grid textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 13px;
+    border: 1px solid var(--restaurant-border);
+    border-radius: 7px;
+    background: var(--restaurant-surface-secondary);
+    color: var(--restaurant-text);
+    font-family: inherit;
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.settings-form-grid input::placeholder,
+.settings-form-grid textarea::placeholder {
+    color: var(--restaurant-muted);
+    opacity: 0.75;
+}
+
+.settings-form-grid input:focus,
+.settings-form-grid textarea:focus {
+    border-color: var(--restaurant-orange);
+    box-shadow: 0 0 0 3px rgba(255, 106, 19, 0.12);
+}
+
+.settings-form-grid textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.settings-full-width {
+    grid-column: 1 / -1;
+}
+
+/* =========================================
+   DELIVERY AVAILABILITY TOGGLE
+========================================= */
+
+.settings-delivery-toggle {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 17px;
+    border: 1px solid var(--restaurant-border);
+    border-radius: 8px;
+    background: var(--restaurant-surface-secondary);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+}
+
+.settings-delivery-toggle:hover {
+    border-color: rgba(255, 106, 19, 0.35);
+    background: var(--restaurant-surface-elevated);
+}
+
+.settings-delivery-toggle input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--restaurant-orange);
+    cursor: pointer;
+}
+
+.settings-delivery-toggle input:focus-visible {
+    outline: 2px solid var(--restaurant-gold);
+    outline-offset: 3px;
+}
+
+.settings-delivery-toggle span {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.settings-delivery-toggle strong {
+    color: var(--restaurant-text);
+    font-size: 13px;
+}
+
+.settings-delivery-toggle small {
+    color: var(--restaurant-muted);
+    font-size: 12px;
+}
+
+/* =========================================
+   FORM ACTIONS
+========================================= */
+
+.settings-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding: 5px 0 20px;
+}
+
+/* SAVE BUTTON */
+
+.settings-save-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 23px;
+    background: var(--restaurant-orange);
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.settings-save-btn:hover:not(:disabled) {
+    background: var(--restaurant-orange-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(255, 106, 19, 0.22);
+}
+
+.settings-save-btn:focus-visible {
+    outline: 2px solid var(--restaurant-gold);
+    outline-offset: 3px;
+}
+
+/* DISABLED BUTTONS */
+
+.settings-save-btn:disabled,
+.settings-refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* =========================================
+   LOADING AND EMPTY STATES
+========================================= */
+
+.settings-loading,
+.settings-empty-state {
+    background: var(--restaurant-surface);
+    border: 1px solid var(--restaurant-border);
+    border-radius: 11px;
+    padding: 65px 25px;
+    text-align: center;
+    color: var(--restaurant-muted);
+    box-shadow: var(--restaurant-shadow);
+}
+
+.settings-empty-state svg {
+    color: var(--restaurant-orange);
+}
+
+.settings-empty-state h2 {
+    color: var(--restaurant-text);
+    font-size: 19px;
+    margin: 15px 0 8px;
+}
+
+.settings-empty-state p {
+    color: var(--restaurant-muted);
+    font-size: 13px;
+    margin: 0;
+}
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+    .restaurant-settings-page {
+        padding: 18px;
+    }
+
+    .settings-page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .settings-restaurant-selector {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .settings-restaurant-selector select {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .settings-section {
+        padding: 18px;
+    }
+
+    .settings-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .settings-full-width {
+        grid-column: auto;
+    }
+
+    .settings-form-actions {
+        justify-content: stretch;
+    }
+
+    .settings-save-btn {
+        width: 100%;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 480px) {
+    .restaurant-settings-page {
+        padding: 13px;
+    }
+
+    .settings-page-header h1 {
+        font-size: 23px;
+    }
+
+    .settings-section {
+        padding: 15px;
+    }
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    .settings-refresh-btn,
+    .settings-delivery-toggle,
+    .settings-save-btn {
+        transition: none;
+    }
+}

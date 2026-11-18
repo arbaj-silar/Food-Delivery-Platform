@@ -1,0 +1,638 @@
+
+/* =========================================
+   ADMIN OVERVIEW
+   FoodExpress Warm Dark Theme
+========================================= */
+
+:root {
+    --admin-bg: #211B18;
+    --admin-surface: #30251F;
+    --admin-surface-secondary: #3B2D25;
+    --admin-surface-elevated: #45342A;
+
+    --admin-primary: #FF6A13;
+    --admin-primary-hover: #E95708;
+    --admin-gold: #FFD166;
+
+    --admin-text: #F5EDE6;
+    --admin-muted: #B7A69A;
+
+    --admin-border: rgba(255, 220, 190, 0.10);
+
+    --admin-success: #63D6A0;
+    --admin-danger: #FF8580;
+
+    --admin-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+    --admin-shadow-hover: 0 18px 42px rgba(0, 0, 0, 0.27);
+}
+
+/* =========================================
+   MAIN OVERVIEW
+========================================= */
+
+.admin-overview {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* =========================================
+   OVERVIEW HEADER
+========================================= */
+
+.admin-overview-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.admin-overview-eyebrow {
+    color: var(--admin-primary);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.admin-overview-heading h2 {
+    margin: 7px 0;
+    color: var(--admin-text);
+    font-size: 27px;
+    font-weight: 800;
+    letter-spacing: -0.8px;
+}
+
+.admin-overview-heading p,
+.admin-overview-section-heading p {
+    margin: 0;
+    color: var(--admin-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Refresh Button */
+
+.admin-overview-refresh {
+    min-height: 41px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 16px;
+    border: none;
+    border-radius: 8px;
+    background: var(--admin-primary);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.admin-overview-refresh:hover:not(:disabled) {
+    background: var(--admin-primary-hover);
+    box-shadow: 0 6px 18px rgba(255, 106, 19, 0.20);
+    transform: translateY(-2px);
+}
+
+.admin-overview-refresh:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+.admin-overview-refresh:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.admin-refresh-spinning,
+.admin-loading-icon {
+    animation: admin-spin 1s linear infinite;
+}
+
+@keyframes admin-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================
+   LOADING AND ERROR
+========================================= */
+
+.admin-overview-loading {
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--admin-muted);
+}
+
+.admin-overview-loading svg {
+    color: var(--admin-primary);
+}
+
+.admin-overview-loading p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.admin-overview-error {
+    padding: 13px 16px;
+    border: 1px solid rgba(255, 133, 128, 0.25);
+    border-radius: 9px;
+    background: rgba(255, 133, 128, 0.10);
+    color: var(--admin-danger);
+    font-size: 13px;
+}
+
+/* =========================================
+   STATISTICS CARDS
+========================================= */
+
+.admin-overview-stats {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 17px;
+}
+
+.admin-overview-stat-card {
+    min-width: 0;
+    min-height: 115px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+    background: var(--admin-surface);
+    box-shadow: var(--admin-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-overview-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--admin-shadow-hover);
+    border-color: rgba(255, 106, 19, 0.22);
+}
+
+.admin-overview-stat-icon {
+    width: 47px;
+    height: 47px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 12px;
+}
+
+/* Orange */
+
+.admin-overview-stat-icon.orange {
+    background: rgba(255, 106, 19, 0.13);
+    color: var(--admin-primary);
+}
+
+/* Blue */
+
+.admin-overview-stat-icon.blue {
+    background: rgba(105, 165, 255, 0.12);
+    color: #83B5FF;
+}
+
+/* Green */
+
+.admin-overview-stat-icon.green {
+    background: rgba(99, 214, 160, 0.12);
+    color: var(--admin-success);
+}
+
+/* Purple */
+
+.admin-overview-stat-icon.purple {
+    background: rgba(180, 145, 255, 0.12);
+    color: #B99AFF;
+}
+
+/* Yellow */
+
+.admin-overview-stat-icon.yellow {
+    background: rgba(255, 209, 102, 0.12);
+    color: var(--admin-gold);
+}
+
+.admin-overview-stat-card p {
+    margin: 0 0 8px;
+    color: var(--admin-muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.admin-overview-stat-card h3 {
+    margin: 0;
+    color: var(--admin-text);
+    font-size: 23px;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   GENERAL SECTIONS
+========================================= */
+
+.admin-overview-section {
+    min-width: 0;
+    padding: 23px;
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+    background: var(--admin-surface);
+    box-shadow: var(--admin-shadow);
+}
+
+.admin-overview-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.admin-overview-section-heading h3 {
+    margin: 0 0 6px;
+    color: var(--admin-text);
+    font-size: 17px;
+    font-weight: 750;
+}
+
+.admin-overview-record-count {
+    padding: 7px 11px;
+    border: 1px solid rgba(255, 106, 19, 0.16);
+    border-radius: 20px;
+    background: rgba(255, 106, 19, 0.10);
+    color: var(--admin-primary);
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+/* =========================================
+   ORDER PERFORMANCE
+========================================= */
+
+.admin-overview-performance-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.admin-overview-performance-card {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 17px;
+    border: 1px solid var(--admin-border);
+    border-radius: 10px;
+    background: var(--admin-surface-secondary);
+}
+
+.performance-card-icon {
+    width: 42px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 10px;
+}
+
+.performance-card-icon.blue {
+    background: rgba(105, 165, 255, 0.12);
+    color: #83B5FF;
+}
+
+.performance-card-icon.green {
+    background: rgba(99, 214, 160, 0.12);
+    color: var(--admin-success);
+}
+
+.performance-card-icon.red {
+    background: rgba(255, 133, 128, 0.12);
+    color: var(--admin-danger);
+}
+
+.admin-overview-performance-card span {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--admin-muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.admin-overview-performance-card strong {
+    color: var(--admin-text);
+    font-size: 22px;
+    font-weight: 800;
+}
+
+/* =========================================
+   RESTAURANT STATUS
+========================================= */
+
+.admin-overview-restaurant-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.restaurant-summary-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    border: 1px solid var(--admin-border);
+    border-radius: 10px;
+    background: var(--admin-surface-secondary);
+}
+
+.restaurant-summary-dot {
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.restaurant-summary-dot.pending {
+    background: var(--admin-gold);
+    box-shadow: 0 0 9px rgba(255, 209, 102, 0.25);
+}
+
+.restaurant-summary-dot.approved {
+    background: #83B5FF;
+}
+
+.restaurant-summary-dot.active {
+    background: var(--admin-success);
+    box-shadow: 0 0 9px rgba(99, 214, 160, 0.20);
+}
+
+.restaurant-summary-dot.rejected {
+    background: var(--admin-danger);
+}
+
+.restaurant-summary-item span:not(.restaurant-summary-dot) {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--admin-muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.restaurant-summary-item strong {
+    color: var(--admin-text);
+    font-size: 21px;
+    font-weight: 800;
+}
+
+/* =========================================
+   ANALYTICS TABLE
+========================================= */
+
+.admin-overview-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--admin-border);
+    border-radius: 9px;
+    -webkit-overflow-scrolling: touch;
+}
+
+.admin-overview-table-wrapper::-webkit-scrollbar {
+    height: 7px;
+}
+
+.admin-overview-table-wrapper::-webkit-scrollbar-track {
+    background: var(--admin-surface-secondary);
+}
+
+.admin-overview-table-wrapper::-webkit-scrollbar-thumb {
+    background: var(--admin-surface-elevated);
+    border-radius: 10px;
+}
+
+.admin-overview-table {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-overview-table thead {
+    background: var(--admin-surface-secondary);
+}
+
+.admin-overview-table th {
+    padding: 14px 15px;
+    color: var(--admin-gold);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.admin-overview-table td {
+    padding: 15px;
+    border-top: 1px solid var(--admin-border);
+    color: var(--admin-muted);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.admin-overview-table tbody tr {
+    transition: background 0.2s ease;
+}
+
+.admin-overview-table tbody tr:hover {
+    background: rgba(255, 220, 190, 0.035);
+}
+
+.admin-overview-table td:first-child strong {
+    display: block;
+    color: var(--admin-text);
+    font-size: 12px;
+}
+
+.admin-overview-table td:first-child span {
+    display: block;
+    margin-top: 5px;
+    color: var(--admin-muted);
+    font-size: 10px;
+}
+
+.admin-completion-cell {
+    min-width: 105px;
+}
+
+.admin-completion-cell > span {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--admin-muted);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.admin-completion-track {
+    width: 100%;
+    height: 5px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: var(--admin-surface-elevated);
+}
+
+.admin-completion-fill {
+    height: 100%;
+    border-radius: 10px;
+    background: var(--admin-success);
+    transition: width 0.3s ease;
+}
+
+.admin-overview-empty {
+    padding: 35px !important;
+    color: var(--admin-muted) !important;
+    text-align: center;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.admin-overview button:focus-visible {
+    outline: 2px solid var(--admin-gold);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+    .admin-overview-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .admin-overview-restaurant-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+    .admin-overview {
+        gap: 18px;
+    }
+
+    .admin-overview-heading {
+        align-items: flex-start;
+    }
+
+    .admin-overview-heading h2 {
+        font-size: 22px;
+    }
+
+    .admin-overview-heading p {
+        font-size: 12px;
+    }
+
+    .admin-overview-refresh {
+        min-height: 37px;
+        padding: 0 11px;
+        font-size: 11px;
+    }
+
+    .admin-overview-stats {
+        gap: 11px;
+    }
+
+    .admin-overview-stat-card {
+        min-height: 100px;
+        gap: 10px;
+        padding: 13px;
+    }
+
+    .admin-overview-stat-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .admin-overview-stat-card p {
+        font-size: 10px;
+    }
+
+    .admin-overview-stat-card h3 {
+        font-size: 19px;
+    }
+
+    .admin-overview-section {
+        padding: 17px;
+    }
+
+    .admin-overview-performance-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-overview-performance-card {
+        padding: 13px;
+    }
+
+    .admin-overview-restaurant-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .restaurant-summary-item {
+        padding: 12px;
+        gap: 9px;
+    }
+
+    .restaurant-summary-item strong {
+        font-size: 18px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+    .admin-overview-heading {
+        flex-direction: column;
+    }
+
+    .admin-overview-refresh {
+        align-self: flex-start;
+    }
+
+    .admin-overview-stats {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-overview-stat-card {
+        min-height: 85px;
+    }
+
+    .admin-overview-restaurant-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-overview-section {
+        padding: 14px;
+    }
+
+    .admin-overview-section-heading h3 {
+        font-size: 15px;
+    }
+}

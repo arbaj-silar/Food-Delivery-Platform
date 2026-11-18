@@ -1,0 +1,588 @@
+
+:root {
+    --admin-bg: #211B18;
+    --admin-surface: #30251F;
+    --admin-surface-secondary: #3B2D25;
+    --admin-surface-elevated: #45342A;
+    --admin-primary: #FF6A13;
+    --admin-primary-hover: #E95708;
+    --admin-accent: #FFD166;
+    --admin-text: #F5EDE6;
+    --admin-muted: #B7A69A;
+    --admin-border: rgba(255, 220, 190, 0.10);
+    --admin-success: #63D6A0;
+    --admin-danger: #FF8580;
+    --admin-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+}
+
+/* =========================================
+   ROLE APPLICATIONS PAGE
+========================================= */
+
+.role-applications-page {
+    width: 100%;
+    min-width: 0;
+    color: var(--admin-text);
+}
+
+.role-page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.role-page-eyebrow {
+    display: inline-block;
+    margin-bottom: 8px;
+    color: var(--admin-accent);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.role-page-header h1 {
+    margin: 0;
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 800;
+    color: var(--admin-text);
+}
+
+.role-page-header p {
+    margin: 8px 0 0;
+    color: var(--admin-muted);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.role-refresh-btn {
+    border: none;
+    border-radius: 9px;
+    padding: 12px 18px;
+    background: var(--admin-primary);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.role-refresh-btn:hover {
+    background: var(--admin-primary-hover);
+    transform: translateY(-1px);
+}
+
+/* =========================================
+   ALERTS
+========================================= */
+
+.role-alert {
+    padding: 13px 16px;
+    margin-bottom: 18px;
+    border-radius: 9px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.role-alert-error {
+    color: var(--admin-danger);
+    background: rgba(255, 133, 128, 0.10);
+    border: 1px solid rgba(255, 133, 128, 0.22);
+}
+
+.role-alert-success {
+    color: var(--admin-success);
+    background: rgba(99, 214, 160, 0.10);
+    border: 1px solid rgba(99, 214, 160, 0.20);
+}
+
+/* =========================================
+   SUMMARY CARDS
+========================================= */
+
+.role-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 28px;
+}
+
+.role-summary-card {
+    padding: 22px;
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: 13px;
+    box-shadow: var(--admin-shadow);
+}
+
+.role-summary-card span {
+    display: block;
+    color: var(--admin-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.role-summary-card strong {
+    display: block;
+    margin-top: 12px;
+    color: var(--admin-accent);
+    font-size: 30px;
+    font-weight: 800;
+}
+
+/* =========================================
+   MANAGEMENT SECTION
+========================================= */
+
+.role-management-section {
+    padding: 24px;
+    margin-bottom: 26px;
+    background: var(--admin-surface);
+    border: 1px solid var(--admin-border);
+    border-radius: 14px;
+    box-shadow: var(--admin-shadow);
+}
+
+.role-section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.role-section-heading h2 {
+    margin: 0;
+    color: var(--admin-text);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.role-section-heading p {
+    margin: 7px 0 0;
+    color: var(--admin-muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.role-record-count {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    color: var(--admin-accent);
+    background: rgba(255, 209, 102, 0.12);
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* =========================================
+   FILTER TOOLBAR
+========================================= */
+
+.role-filter-toolbar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.role-filter-toolbar input,
+.role-filter-toolbar select {
+    min-width: 0;
+    min-height: 43px;
+    padding: 10px 13px;
+    color: var(--admin-text);
+    background: var(--admin-surface-secondary);
+    border: 1px solid var(--admin-border);
+    border-radius: 8px;
+    outline: none;
+    font-size: 13px;
+}
+
+.role-filter-toolbar input::placeholder {
+    color: var(--admin-muted);
+}
+
+.role-filter-toolbar select option {
+    background: var(--admin-surface);
+    color: var(--admin-text);
+}
+
+.role-filter-toolbar input {
+    flex: 1;
+}
+
+.role-filter-toolbar select {
+    width: 220px;
+}
+
+.role-filter-toolbar input:focus,
+.role-filter-toolbar select:focus {
+    border-color: var(--admin-primary);
+    box-shadow: 0 0 0 3px rgba(255, 106, 19, 0.12);
+}
+
+/* =========================================
+   APPLICATION CARDS
+========================================= */
+
+.role-application-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.role-application-card {
+    min-width: 0;
+    padding: 21px;
+    border: 1px solid var(--admin-border);
+    border-radius: 12px;
+    background: var(--admin-surface-secondary);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.role-application-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+.role-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.role-applicant-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    color: #fff;
+    background: var(--admin-primary);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* =========================================
+   APPLICATION STATUS
+========================================= */
+
+.role-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+}
+
+.role-status.pending {
+    color: var(--admin-accent);
+    background: rgba(255, 209, 102, 0.13);
+}
+
+.role-status.approved {
+    color: var(--admin-success);
+    background: rgba(99, 214, 160, 0.13);
+}
+
+.role-status.rejected {
+    color: var(--admin-danger);
+    background: rgba(255, 133, 128, 0.13);
+}
+
+/* =========================================
+   APPLICANT INFORMATION
+========================================= */
+
+.role-application-card h3 {
+    margin: 0;
+    color: var(--admin-text);
+    font-size: 17px;
+    font-weight: 800;
+    overflow-wrap: anywhere;
+}
+
+.role-applicant-email {
+    margin: 6px 0 18px;
+    color: var(--admin-muted);
+    font-size: 13px;
+    overflow-wrap: anywhere;
+}
+
+.role-applicant-details,
+.role-history-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.role-applicant-details div,
+.role-history-details div {
+    min-width: 0;
+}
+
+.role-applicant-details span,
+.role-history-details span {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--admin-muted);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.role-applicant-details strong,
+.role-history-details strong {
+    display: block;
+    color: var(--admin-text);
+    font-size: 12px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   APPROVE AND REJECT ACTIONS
+========================================= */
+
+.role-application-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 21px;
+    padding-top: 17px;
+    border-top: 1px solid var(--admin-border);
+}
+
+.role-application-actions button {
+    flex: 1;
+    min-height: 40px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.role-application-actions button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.role-approve-btn {
+    color: #211B18;
+    background: var(--admin-success);
+}
+
+.role-approve-btn:hover:not(:disabled) {
+    background: #48C58C;
+}
+
+.role-reject-btn {
+    color: #211B18;
+    background: var(--admin-danger);
+}
+
+.role-reject-btn:hover:not(:disabled) {
+    background: #F36D69;
+}
+
+/* =========================================
+   EMPTY STATE
+========================================= */
+
+.role-empty-state {
+    padding: 45px 20px;
+    text-align: center;
+    border: 1px dashed var(--admin-border);
+    border-radius: 11px;
+    background: var(--admin-surface-secondary);
+}
+
+.role-empty-state > span {
+    font-size: 34px;
+}
+
+.role-empty-state h3 {
+    margin: 12px 0 7px;
+    color: var(--admin-text);
+    font-size: 17px;
+}
+
+.role-empty-state p {
+    margin: 0;
+    color: var(--admin-muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   APPLICATION HISTORY
+========================================= */
+
+.role-history-section {
+    margin-bottom: 0;
+}
+
+.role-history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.role-history-card {
+    padding: 20px;
+    border: 1px solid var(--admin-border);
+    border-radius: 11px;
+    background: var(--admin-surface-secondary);
+}
+
+.role-history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.role-history-header h3 {
+    margin: 0;
+    color: var(--admin-text);
+    font-size: 16px;
+    overflow-wrap: anywhere;
+}
+
+.role-history-header p {
+    margin: 6px 0 0;
+    color: var(--admin-muted);
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   REJECTION REASON
+========================================= */
+
+.role-rejection-reason {
+    margin-top: 18px;
+    padding: 13px;
+    border: 1px solid rgba(255, 133, 128, 0.15);
+    border-radius: 8px;
+    background: rgba(255, 133, 128, 0.09);
+}
+
+.role-rejection-reason span {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--admin-danger);
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.role-rejection-reason p {
+    margin: 0;
+    color: #F0AAA5;
+    font-size: 13px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* =========================================
+   LOADING
+========================================= */
+
+.role-applications-loading {
+    padding: 50px 20px;
+    text-align: center;
+    color: var(--admin-muted);
+    font-weight: 700;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.role-applications-page button:focus-visible,
+.role-applications-page input:focus-visible,
+.role-applications-page select:focus-visible {
+    outline: 2px solid var(--admin-accent);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   RESPONSIVE TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+    .role-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .role-application-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   RESPONSIVE MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+    .role-page-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .role-refresh-btn {
+        width: 100%;
+    }
+
+    .role-management-section {
+        padding: 16px;
+    }
+
+    .role-section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .role-filter-toolbar {
+        flex-direction: column;
+    }
+
+    .role-filter-toolbar input,
+    .role-filter-toolbar select {
+        width: 100%;
+    }
+
+    .role-history-header {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 420px) {
+    .role-summary-grid {
+        gap: 10px;
+    }
+
+    .role-summary-card {
+        padding: 15px;
+    }
+
+    .role-summary-card strong {
+        font-size: 25px;
+    }
+
+    .role-applicant-details,
+    .role-history-details {
+        grid-template-columns: 1fr;
+    }
+
+    .role-application-actions {
+        flex-direction: column;
+    }
+}

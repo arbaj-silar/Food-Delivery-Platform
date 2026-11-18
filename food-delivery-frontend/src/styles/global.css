@@ -1,0 +1,166 @@
+
+/* =========================================
+   GLOBAL RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================================
+   GLOBAL THEME VARIABLES
+========================================= */
+
+:root {
+    --app-bg: #211B18;
+
+    --app-surface: #30251F;
+    --app-surface-secondary: #3B2D25;
+    --app-surface-elevated: #45342A;
+
+    --app-orange: #FF6A13;
+    --app-orange-hover: #E95708;
+    --app-gold: #FFD166;
+
+    --app-text: #F5EDE6;
+    --app-muted: #B7A69A;
+
+    --app-border: rgba(255, 220, 190, 0.10);
+
+    --app-success: #63D6A0;
+    --app-danger: #FF8580;
+
+    --app-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.16);
+}
+
+/* =========================================
+   HTML
+========================================= */
+
+html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+}
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--app-bg);
+    color: var(--app-text);
+    min-height: 100vh;
+}
+
+/* =========================================
+   GLOBAL FORM ELEMENTS
+========================================= */
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+input,
+textarea,
+select {
+    color: var(--app-text);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--app-muted);
+    opacity: 0.8;
+}
+
+/* =========================================
+   GLOBAL LINKS
+========================================= */
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* =========================================
+   GLOBAL IMAGES
+========================================= */
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================
+   AUTHENTICATION SESSION RESTORATION
+========================================= */
+
+.auth-loading {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    background: var(--app-bg);
+    color: var(--app-text);
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* =========================================
+   AUTHENTICATION SPINNER
+========================================= */
+
+.auth-spinner {
+    width: 42px;
+    height: 42px;
+    border: 4px solid var(--app-surface-elevated);
+    border-top-color: var(--app-orange);
+    border-radius: 50%;
+    animation: auth-spin 0.8s linear infinite;
+}
+
+/* =========================================
+   SPINNER ANIMATION
+========================================= */
+
+@keyframes auth-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =========================================
+   GLOBAL ACCESSIBILITY
+========================================= */
+
+button:focus-visible,
+a:focus-visible {
+    outline: 2px solid var(--app-orange);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .auth-spinner {
+        animation-duration: 2s;
+    }
+}

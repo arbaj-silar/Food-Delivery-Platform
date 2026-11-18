@@ -1,0 +1,239 @@
+
+/* =========================================
+   RESTAURANT OVERVIEW - FOOD EXPRESS THEME
+========================================= */
+
+:root {
+    --overview-bg: #211B18;
+    --overview-surface: #30251F;
+    --overview-surface-secondary: #3B2D25;
+    --overview-surface-elevated: #45342A;
+
+    --overview-orange: #FF6A13;
+    --overview-orange-hover: #E95708;
+    --overview-gold: #FFD166;
+
+    --overview-text: #F5EDE6;
+    --overview-muted: #B7A69A;
+
+    --overview-border: rgba(255, 220, 190, 0.10);
+
+    --overview-success: #63D6A0;
+    --overview-danger: #FF8580;
+}
+
+/* Main Overview */
+
+.restaurant-overview {
+    width: 100%;
+    min-width: 0;
+    padding: 4px;
+    color: var(--overview-text);
+}
+
+/* Page Heading */
+
+.restaurant-page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.restaurant-page-heading h1 {
+    margin: 0 0 7px;
+    font-size: clamp(22px, 3vw, 28px);
+    font-weight: 750;
+    color: var(--overview-text);
+}
+
+.restaurant-page-heading p {
+    margin: 0;
+    color: var(--overview-muted);
+    font-size: 14px;
+}
+
+/* Refresh Button */
+
+.dashboard-refresh-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 16px;
+    border: 1px solid var(--overview-border);
+    border-radius: 9px;
+    background: var(--overview-surface-secondary);
+    color: var(--overview-text);
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.dashboard-refresh-btn:hover:not(:disabled) {
+    border-color: var(--overview-orange);
+    color: var(--overview-orange);
+    background: var(--overview-surface-elevated);
+}
+
+.dashboard-refresh-btn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Overview Statistics */
+
+.restaurant-overview-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 25px;
+}
+
+/* Statistics Card */
+
+.restaurant-overview-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    min-width: 0;
+    padding: 22px 18px;
+    background: var(--overview-surface);
+    border: 1px solid var(--overview-border);
+    border-radius: 13px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.restaurant-overview-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 106, 19, 0.25);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.27);
+}
+
+/* Statistics Icon */
+
+.restaurant-overview-card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(255, 106, 19, 0.14);
+    color: var(--overview-orange);
+}
+
+/* Statistics Content */
+
+.restaurant-overview-card-content {
+    min-width: 0;
+}
+
+.restaurant-overview-card-content p {
+    margin: 0 0 8px;
+    color: var(--overview-muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.restaurant-overview-card-content h2 {
+    margin: 0;
+    color: var(--overview-gold);
+    font-size: clamp(20px, 2vw, 27px);
+    font-weight: 750;
+    overflow-wrap: anywhere;
+}
+
+/* Welcome Section */
+
+.restaurant-overview-welcome {
+    padding: 26px;
+    border: 1px solid var(--overview-border);
+    border-radius: 14px;
+    background: linear-gradient(
+        120deg,
+        var(--overview-surface-secondary),
+        var(--overview-surface)
+    );
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+}
+
+.restaurant-overview-welcome h2 {
+    margin: 0 0 10px;
+    color: var(--overview-gold);
+    font-size: 19px;
+    font-weight: 700;
+}
+
+.restaurant-overview-welcome p {
+    max-width: 650px;
+    margin: 0;
+    color: var(--overview-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Error Message */
+
+.dashboard-error {
+    margin-bottom: 18px;
+    padding: 13px 16px;
+    border: 1px solid rgba(255, 133, 128, 0.25);
+    border-radius: 9px;
+    background: rgba(255, 133, 128, 0.10);
+    color: var(--overview-danger);
+    font-size: 13px;
+}
+
+/* Accessibility */
+
+.restaurant-overview button:focus-visible {
+    outline: 2px solid var(--overview-orange);
+    outline-offset: 3px;
+}
+
+/* Tablet */
+
+@media (max-width: 1100px) {
+    .restaurant-overview-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+    .restaurant-overview {
+        padding: 0;
+    }
+
+    .restaurant-page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-refresh-btn {
+        width: 100%;
+    }
+
+    .restaurant-overview-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .restaurant-overview-card {
+        padding: 17px;
+    }
+
+    .restaurant-overview-welcome {
+        padding: 20px;
+    }
+}

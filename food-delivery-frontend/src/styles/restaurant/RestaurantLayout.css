@@ -1,0 +1,762 @@
+
+/* =========================================
+   RESTAURANT POS DASHBOARD LAYOUT
+   FOOD EXPRESS - WARM DARK THEME
+========================================= */
+
+:root {
+    --restaurant-primary: #FF6A13;
+    --restaurant-primary-dark: #E95708;
+    --restaurant-primary-light: rgba(255, 106, 19, 0.14);
+
+    --restaurant-gold: #FFD166;
+
+    --restaurant-bg: #211B18;
+    --restaurant-surface: #30251F;
+    --restaurant-surface-secondary: #3B2D25;
+    --restaurant-surface-elevated: #45342A;
+
+    --restaurant-text: #F5EDE6;
+    --restaurant-muted: #B7A69A;
+
+    --restaurant-border: rgba(255, 220, 190, 0.10);
+
+    --restaurant-success: #63D6A0;
+    --restaurant-danger: #FF8580;
+
+    --restaurant-sidebar-width: 265px;
+}
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.restaurant-layout {
+    display: flex;
+    min-height: 100vh;
+    width: 100%;
+    background: var(--restaurant-bg);
+    color: var(--restaurant-text);
+    font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* =========================================
+   MOBILE HEADER - HIDDEN ON DESKTOP
+========================================= */
+
+.restaurant-mobile-header {
+    display: none;
+}
+
+.restaurant-mobile-brand {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.restaurant-mobile-menu-btn {
+    display: none;
+}
+
+.restaurant-sidebar-close {
+    display: none;
+}
+
+.restaurant-mobile-overlay {
+    display: none;
+}
+
+/* =========================================
+   SIDEBAR
+========================================= */
+
+.restaurant-sidebar {
+    width: var(--restaurant-sidebar-width);
+    min-width: var(--restaurant-sidebar-width);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--restaurant-surface);
+    border-right: 1px solid var(--restaurant-border);
+    padding: 26px 18px 20px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+}
+
+.restaurant-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 8px 30px;
+    border-bottom: 1px solid var(--restaurant-border);
+}
+
+.restaurant-brand-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    background: var(--restaurant-primary-light);
+    border-radius: 13px;
+    font-size: 24px;
+    color: var(--restaurant-orange, #FF6A13);
+}
+
+.restaurant-brand-info {
+    min-width: 0;
+}
+
+.restaurant-brand h2 {
+    font-size: 19px;
+    font-weight: 800;
+    margin: 0;
+    color: var(--restaurant-text);
+    letter-spacing: -0.5px;
+}
+
+.restaurant-brand span {
+    display: block;
+    margin-top: 4px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: var(--restaurant-primary);
+}
+
+.restaurant-sidebar-label {
+    font-size: 10px;
+    font-weight: 800;
+    color: var(--restaurant-muted);
+    letter-spacing: 1.5px;
+    padding: 27px 10px 12px;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.restaurant-navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+}
+
+.restaurant-nav-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.restaurant-nav-heading {
+    padding: 0 10px;
+    margin: 0 0 7px;
+    color: var(--restaurant-muted);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.restaurant-nav-link {
+    min-height: 45px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    border-radius: 9px;
+    text-decoration: none;
+    color: var(--restaurant-muted);
+    font-size: 13px;
+    font-weight: 600;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.restaurant-nav-link svg {
+    flex-shrink: 0;
+}
+
+.restaurant-nav-link:hover {
+    background: var(--restaurant-surface-elevated);
+    color: var(--restaurant-orange, #FF6A13);
+}
+
+.restaurant-nav-link.active {
+    background: var(--restaurant-primary);
+    color: #ffffff;
+    box-shadow: 0 5px 12px rgba(255, 106, 19, 0.20);
+}
+
+.restaurant-nav-arrow {
+    margin-left: auto;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.restaurant-nav-link:hover .restaurant-nav-arrow,
+.restaurant-nav-link.active .restaurant-nav-arrow {
+    opacity: 1;
+}
+
+/* =========================================
+   SIDEBAR BOTTOM
+========================================= */
+
+.restaurant-sidebar-bottom {
+    margin-top: auto;
+    padding-top: 30px;
+}
+
+.restaurant-help-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: var(--restaurant-surface-secondary);
+    border: 1px solid var(--restaurant-border);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 16px;
+}
+
+.restaurant-help-icon {
+    flex-shrink: 0;
+    color: var(--restaurant-gold);
+}
+
+.restaurant-help-card strong {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--restaurant-gold);
+}
+
+.restaurant-help-card p {
+    font-size: 11px;
+    line-height: 1.6;
+    color: var(--restaurant-muted);
+    margin: 7px 0 0;
+}
+
+.restaurant-account-button {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    border: none;
+    background: transparent;
+    color: var(--restaurant-muted);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.restaurant-account-button:hover {
+    background: var(--restaurant-primary-light);
+    color: var(--restaurant-primary);
+}
+
+/* =========================================
+   MAIN CONTENT
+========================================= */
+
+.restaurant-main {
+    min-width: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================
+   TOPBAR
+========================================= */
+
+.restaurant-topbar {
+    min-height: 86px;
+    padding: 15px 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background: var(--restaurant-surface);
+    border-bottom: 1px solid var(--restaurant-border);
+}
+
+.restaurant-topbar-title {
+    min-width: 0;
+}
+
+.restaurant-topbar-eyebrow {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: var(--restaurant-primary);
+}
+
+.restaurant-topbar-title h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 800;
+    color: var(--restaurant-text);
+}
+
+.restaurant-topbar-title p {
+    margin: 5px 0 0;
+    font-size: 11px;
+    color: var(--restaurant-muted);
+}
+
+.restaurant-topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.restaurant-search {
+    width: 230px;
+    height: 39px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 12px;
+    background: var(--restaurant-surface-secondary);
+    border: 1px solid var(--restaurant-border);
+    border-radius: 8px;
+    color: var(--restaurant-muted);
+}
+
+.restaurant-search input {
+    width: 100%;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 11px;
+    color: var(--restaurant-text);
+}
+
+.restaurant-search input::placeholder {
+    color: var(--restaurant-muted);
+}
+
+.restaurant-notification {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    background: var(--restaurant-surface-secondary);
+    border: 1px solid var(--restaurant-border);
+    color: var(--restaurant-muted);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.restaurant-notification:hover {
+    color: var(--restaurant-primary);
+    background: var(--restaurant-primary-light);
+    border-color: rgba(255, 106, 19, 0.25);
+}
+
+.restaurant-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    text-align: left;
+    flex-shrink: 0;
+}
+
+.restaurant-user-avatar {
+    width: 39px;
+    height: 39px;
+    display: grid;
+    place-items: center;
+    background: var(--restaurant-primary-light);
+    color: var(--restaurant-primary);
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.restaurant-user-details strong {
+    display: block;
+    font-size: 12px;
+    color: var(--restaurant-text);
+}
+
+.restaurant-user-details span {
+    display: block;
+    margin-top: 3px;
+    font-size: 10px;
+    color: var(--restaurant-muted);
+}
+
+/* =========================================
+   PAGE CONTENT
+========================================= */
+
+.restaurant-page-content {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 30px 35px;
+    flex: 1;
+    min-width: 0;
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+.restaurant-layout button:focus-visible,
+.restaurant-layout input:focus-visible {
+    outline: 2px solid var(--restaurant-primary);
+    outline-offset: 3px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) and (min-width: 761px) {
+
+    .restaurant-sidebar {
+        width: 230px;
+        min-width: 230px;
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .restaurant-topbar {
+        padding: 15px 22px;
+    }
+
+    .restaurant-page-content {
+        padding: 25px 22px;
+    }
+
+    .restaurant-search {
+        width: 180px;
+    }
+}
+
+/* =========================================
+   MOBILE SLIDE-IN NAVIGATION
+========================================= */
+
+@media (max-width: 760px) {
+
+    /* Main layout */
+
+    .restaurant-layout {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        overflow-x: clip;
+    }
+
+    /* Fixed mobile header */
+
+    .restaurant-mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+        min-height: 68px;
+        padding: 10px 16px;
+        background: var(--restaurant-surface);
+        border-bottom: 1px solid var(--restaurant-border);
+        position: sticky;
+        top: 0;
+        z-index: 1001;
+    }
+
+    .restaurant-mobile-brand {
+        min-width: 0;
+    }
+
+    .restaurant-mobile-brand .restaurant-brand-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .restaurant-mobile-brand .restaurant-brand-info h2 {
+        font-size: 19px;
+    }
+
+    .restaurant-mobile-menu-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        flex-shrink: 0;
+        border: 1px solid var(--restaurant-border);
+        border-radius: 9px;
+        background: var(--restaurant-surface-secondary);
+        color: var(--restaurant-text);
+        cursor: pointer;
+        transition: background 0.2s ease;
+    }
+
+    .restaurant-mobile-menu-btn:hover {
+        background: var(--restaurant-primary-light);
+        color: var(--restaurant-primary);
+    }
+
+    /* Sidebar drawer */
+
+    .restaurant-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 1003;
+
+        display: flex;
+        flex-direction: column;
+
+        width: min(290px, 85vw);
+        min-width: 0;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 0;
+
+        padding: 22px 17px;
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        background: var(--restaurant-surface);
+        border-right: 1px solid var(--restaurant-border);
+
+        transform: translateX(-105%);
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+            visibility 0.32s ease;
+    }
+
+    .restaurant-sidebar.mobile-open {
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Drawer brand */
+
+    .restaurant-sidebar .restaurant-brand {
+        width: 100%;
+        padding: 0 0 22px;
+        border-bottom: 1px solid var(--restaurant-border);
+    }
+
+    .restaurant-sidebar-close {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        flex-shrink: 0;
+        border: none;
+        border-radius: 8px;
+        background: var(--restaurant-surface-secondary);
+        color: var(--restaurant-muted);
+        cursor: pointer;
+    }
+
+    .restaurant-sidebar-close:hover {
+        background: var(--restaurant-primary-light);
+        color: var(--restaurant-primary);
+    }
+
+    /* Drawer navigation */
+
+    .restaurant-navigation {
+        display: flex;
+        flex-direction: column;
+        gap: 23px;
+        padding-top: 25px;
+        overflow: visible;
+    }
+
+    .restaurant-nav-group {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .restaurant-nav-heading {
+        display: block;
+        padding: 0 10px;
+        margin: 0 0 7px;
+    }
+
+    .restaurant-nav-link {
+        min-height: 46px;
+        padding: 0 12px;
+        font-size: 13px;
+        white-space: normal;
+    }
+
+    .restaurant-nav-arrow {
+        opacity: 1;
+    }
+
+    /* Drawer bottom */
+
+    .restaurant-sidebar-bottom {
+        display: block;
+        margin-top: auto;
+        padding-top: 25px;
+    }
+
+    .restaurant-help-card {
+        margin-bottom: 12px;
+    }
+
+    .restaurant-account-button {
+        min-height: 44px;
+        font-size: 13px;
+    }
+
+    /* Dark overlay */
+
+    .restaurant-mobile-overlay {
+        display: block;
+        position: fixed;
+        inset: 0;
+        z-index: 1002;
+
+        background: rgba(0, 0, 0, 0.65);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+
+        transition:
+            opacity 0.32s ease,
+            visibility 0.32s ease;
+    }
+
+    .restaurant-mobile-overlay.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    /* Main workspace */
+
+    .restaurant-main {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .restaurant-topbar {
+        min-height: auto;
+        padding: 16px;
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .restaurant-topbar-title {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .restaurant-topbar-title h2 {
+        font-size: 17px;
+    }
+
+    .restaurant-topbar-title p {
+        line-height: 1.5;
+    }
+
+    .restaurant-page-content {
+        width: 100%;
+        padding: 20px 16px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+
+    .restaurant-mobile-header {
+        min-height: 62px;
+        padding: 9px 12px;
+    }
+
+    .restaurant-mobile-brand .restaurant-brand-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 21px;
+    }
+
+    .restaurant-mobile-brand .restaurant-brand-info h2 {
+        font-size: 17px;
+    }
+
+    .restaurant-mobile-brand .restaurant-brand-info span {
+        font-size: 8px;
+        letter-spacing: 1.2px;
+    }
+
+    .restaurant-sidebar {
+        width: min(275px, 85vw);
+        padding: 18px 14px;
+    }
+
+    .restaurant-topbar {
+        padding: 14px 12px;
+    }
+
+    .restaurant-topbar-title h2 {
+        font-size: 16px;
+    }
+
+    .restaurant-topbar-title p {
+        font-size: 10px;
+    }
+
+    .restaurant-user-details {
+        display: none;
+    }
+
+    .restaurant-page-content {
+        padding: 17px 12px;
+    }
+}
+
+/* =========================================
+   SIDEBAR SCROLLBAR
+========================================= */
+
+.restaurant-sidebar::-webkit-scrollbar {
+    width: 5px;
+}
+
+.restaurant-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.restaurant-sidebar::-webkit-scrollbar-thumb {
+    background: var(--restaurant-surface-elevated);
+    border-radius: 10px;
+}
+
+.restaurant-sidebar::-webkit-scrollbar-thumb:hover {
+    background: var(--restaurant-primary);
+}
